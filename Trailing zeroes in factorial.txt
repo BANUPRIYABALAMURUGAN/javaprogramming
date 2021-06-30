@@ -1,0 +1,16 @@
+/*For an integer N find the number of trailing zeroes in N!.*/   
+
+static int trailingZeroes(int N){
+        if(N<0)
+        {
+        return -1;
+        }
+   int count=0;
+   while(N>=5)
+   {
+       N=N/5;
+       count=count+N;
+   }
+   return count;
+    }
+}
