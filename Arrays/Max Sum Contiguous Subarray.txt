@@ -1,0 +1,34 @@
+/*
+Find the contiguous subarray within an array, 
+A of length N which has the largest sum.
+*/
+
+********************************************************
+Asked in FACEBOOK
+PAYPAL
+YAHOO
+MICROSOFT
+LINKEDIN
+AMAZON
+GOLDMAN SACHS
+
+********************************************************
+code:
+
+ public static int maxSubArray(final int[] A) {
+    int n = A.length;
+     int maxarrend = 0, maxarrfar = Integer.MIN_VALUE;
+        for(int i=0; i<n; i++)
+        {
+             maxarrend = maxarrend + A[i];
+        if(maxarrend < A[i])
+        {
+                maxarrend = A[i];
+        }
+        if(maxarrfar < maxarrend)
+        {
+                maxarrfar = maxarrend;
+        }
+            return maxarrfar;
+    }
+}
