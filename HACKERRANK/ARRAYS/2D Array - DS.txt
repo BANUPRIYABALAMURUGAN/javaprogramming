@@ -1,0 +1,41 @@
+*******************************************************************
+
+/* to find maximum value of hour glass using 6 * 6 array. */
+
+*******************************************************************
+Code:
+
+public class Solution 
+{
+public static void main(String[] args) throws IOException
+        {
+        Scanner sc = new Scanner(System.in);
+        int arr[][] = new int[6][6];
+        for(int i = 0; i < 6; i++)
+        {
+         for(int j = 0; j < 6;j++)
+        {
+           arr[i][j] = sc.nextInt();
+        }
+        }
+        System.out.println(x(arr));
+         }
+    static int x(int array[][])
+     {
+        int max = Integer.MIN_VALUE;
+        int tot = 0;
+     for(int i= 0; i< 4; i++)
+     {
+     for(int j= 0; j < 4; j++ )
+     {
+                
+          tot = array[i][j] + array[i][j+1] + array[i][j+2];
+          tot = tot + array[i+1][j+1];
+          tot = tot + array[i+2][j] + array[i+2][j+1] + array[i+2][j+2];
+          max = tot>max?tot:max;
+      }
+      }
+        return max;
+      }
+      }
+ 
