@@ -1,0 +1,39 @@
+***********************************************************************************
+
+You are given an unordered array consisting of consecutive integers  [1, 2, 3, ..., n] 
+without any duplicates. 
+You are allowed to swap any two elements.
+ Find the minimum number of swaps required to sort the array in ascending order.
+
+***********************************************************************************
+Code:
+
+public class Solution 
+    {
+     public static void main(String[] args) throws IOException     
+        {
+         Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+         int arr[] = new int[a];
+        for (int i = 0; i < a; i++) 
+        {
+            arr[i] = sc.nextInt();
+        }
+       int x = 0;
+        for (int i = 0; i < arr.length; i++)
+          {
+        if (arr[i] != i+1) 
+         {
+        int ind = i;
+        while (arr[ind] != i+1) {
+         ind++;
+          }
+         int temp = arr[ind];
+         arr[ind] = arr[i];
+         arr[i] = temp;
+         x++;
+          }
+          }
+       System.out.println(x);
+         }
+         }
