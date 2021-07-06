@@ -1,0 +1,37 @@
+****************************************************************************
+Given two strings, determine if they share a common substring.
+ A substring may be as small as one character.
+
+****************************************************************************
+
+Code:
+
+public class Solution {
+public static String twoStrings(String str1, String str2) {
+int length = str1.length() < str2.length() ? str1.length() : str2.length();
+        int charExist[] = new int[50];
+       for (int i = 0; i < length; i++)
+        {
+            int ind = str1.charAt(i)-'a';
+            charExist[ind] = 1;
+        }
+        for (int i = 0; i < length; i++)
+         {
+            int ind = str2.charAt(i)-'a';
+            if (charExist[ind] > 0)
+                return "YES";
+         }
+                return "NO";
+         }
+   public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for (int a = 0; a < n; a++)
+         {
+     String str1 = sc.next();
+     String str2 = sc.next();
+     String res = twoStrings(str1, str2);
+    System.out.println(res);
+        }
+    }
+}
