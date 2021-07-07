@@ -1,0 +1,47 @@
+***********************************************************************************************************
+Two strings are anagrams of each other if the letters of one string can be rearranged to form the other string. 
+Given a string, find the number of pairs of substrings of the string that are anagrams of each other.
+***********************************************************************************************************
+
+code:
+
+public static final int totalp = 26;
+static boolean sna(String str1, String str2) {
+        char[] ch1 = new char[totalp];
+        char[] ch2 = new char[totalp];
+
+for (int i = 0, n = str1.length(); i < n; i++) 
+        {
+            ch1[str1.charAt(i) - 97] += 1;
+            ch2[str2.charAt(i) - 97] += 1;
+        }
+
+for (int i = 0; i < totalp; i++) 
+        {
+            if (ch1[i] != ch2[i]) {
+                return false;
+        }
+        }
+      return true;
+    }
+static int sherlockAndAnagrams(String s) {
+        int c = 0;
+        for (int i = 1, n = s.length(); i < n; i++) {
+            List<String> subsetList = new ArrayList<>();
+            for (int j = 0; j < n; j++) 
+            {
+                if (i + j <= n) {
+                    subsetList.add(s.substring(j, i + j));
+                }
+            }
+for (int k = 0, size = subsetList.size(); k < size; k++) 
+            {
+                for (int l = k + 1; l < size; l++) {
+                    if (sna(subsetList.get(k), subsetList.get(l))) {
+                        c++;
+                }
+                }
+                }
+                }
+                   return c;
+                   }
