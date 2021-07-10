@@ -1,0 +1,40 @@
+*************************************************************************************************************
+Mark and Jane are very happy after having their first child. Their son loves toys, so Mark wants to buy some. 
+There are a number of different toys lying in front of him, tagged with their prices. 
+Mark has only a certain amount to spend, and he wants to maximize the number of toys he buys with this money. 
+Given a list of toy prices and an amount to spend, determine the maximum number of gifts he can buy.
+*************************************************************************************************************
+
+Code:
+
+public class Solution
+{
+ public static void main(String[] args) 
+ {
+        Scanner sc = new Scanner(System.in);
+        int no = sc.nextInt();
+        int c  = sc.nextInt();
+
+        int[] arr = new int[no];
+        for (int i = 0; i < no; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.println(x(arr, c));
+    }
+   public static int x(int[] arr, int c) {
+        Arrays.sort(arr);
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (c - arr[i] > 0) {
+                c = c-arr[i];
+                count =count+1;
+            } 
+            else
+             {
+                break;
+             }
+             }
+     return count;
+    }
+    }

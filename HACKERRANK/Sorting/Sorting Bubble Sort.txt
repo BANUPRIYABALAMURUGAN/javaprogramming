@@ -1,0 +1,45 @@
+*******************************************************************************************
+Given an array of integers, sort the array in ascending order using the Bubble Sort algorithm
+*******************************************************************************************
+
+code:
+
+public class Solution {
+private static int[] arr;
+private static void bubbleSort() {
+int n = arr.length;
+int ts = 0; 
+for (int i = 0; i < n; i++) 
+{
+ int s = 0;
+ for (int j = 0; j < arr.length - 1; j++)
+{
+if (arr[j] > arr[j + 1]) {
+    int tmp = arr[j];
+    arr[j] = arr[j + 1];
+     arr[j + 1] = tmp;
+     s++; 
+     ts++;
+      }
+      }
+ if (s== 0) 
+ {
+ System.out.printf("Array is sorted in %d swaps.\n", ts);
+ System.out.printf("First Element: %d\n", arr[0]);
+ System.out.printf("Last Element: %d\n", arr[n - 1]);
+  break;
+   }
+    }
+    }
+public static void main(String[] args){
+ Scanner sc = new Scanner(System.in);
+ int n = sc.nextInt();
+  arr = new int[n];
+for (int i = 0; i < n; i++)
+ {
+   arr[i] = sc.nextInt();
+   }
+ sc.close();
+bubbleSort();
+}
+}
