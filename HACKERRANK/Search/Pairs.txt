@@ -1,0 +1,34 @@
+********************************************************************************************************
+Given an array of integers and a target value,
+ determine the number of pairs of array elements that have a difference equal to the target value.
+********************************************************************************************************
+
+code:
+
+public class Solution {
+     public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int k=sc.nextInt();
+        int c=0;
+        long arr[]=new long[n];
+        for(int i=0;i<n;i++)
+            arr[i]=sc.nextLong();
+        Arrays.sort(arr);
+        int i=0,j=1;
+   
+    while(j < n) {
+        long diff = arr[j] - arr[i];
+       
+        if (diff == k) {
+            c++;
+            j++;
+        } else if (diff > k) {
+            i++;
+        } else if (diff < k) {
+            j++;
+        }
+    }
+        System.out.println(c);
+    }
+}
