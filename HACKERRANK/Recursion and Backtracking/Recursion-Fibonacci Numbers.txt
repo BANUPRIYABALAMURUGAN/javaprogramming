@@ -1,0 +1,26 @@
+***************************************************************************************
+Recursion: Fibonacci Numbers
+
+***************************************************************************************
+
+code:
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int no = scan.nextInt();
+        sc.close();
+        System.out.println(fibonacci(no));
+    }
+
+    private static int fibonacci(int n) {
+        int prev = 0;
+        int curr = 1;
+        for (int i = 2; i <= n; i++) {
+            int next = prev + curr;
+            prev = curr;
+            curr = next;
+        }
+        return curr;
+    }
+}
