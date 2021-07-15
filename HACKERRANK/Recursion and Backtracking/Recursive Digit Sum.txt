@@ -1,0 +1,40 @@
+**********************************
+Find Merge Point of Two Lists
+**********************************
+
+code:
+public class Solution {
+        public static void main(String[] args) {
+        Solution s = new Solution();
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        int k = sc.nextInt();
+        int sum = Integer.parseInt(s.supdig(str));
+        sum = sum*k;
+        String sup = Integer.toString(s.supdig(sum));
+        System.out.println(sup);
+    }
+    String supdig(String n) {
+    if(n.length() == 1) return n;
+    else {
+    int ns= 0;
+    for(int i = 0; i < n.length(); i++) 
+    {
+    ns= ns+Character.getNumericValue( n.charAt(i) );    
+    }
+    return supdig(Integer.toString(ns));
+    }       
+    }
+    int supdig(int n) {
+    if(n / 10 == 0) return n;
+    else
+    {
+    int r = 0;
+    while(n > 0) {
+    r = r+n % 10;
+    n =n/ 10;
+    }
+    return supdig(r);
+        }
+        }
+        }
